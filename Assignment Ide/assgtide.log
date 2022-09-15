@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.13)  15 SEP 2022 10:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.13)  15 SEP 2022 11:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -898,12 +898,17 @@ Overfull \hbox (39.89555pt too wide) in paragraph at lines 109--110
 
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 141.
+LaTeX Font Info:    Trying to load font information for TS1+lmss on input line 
+162.
+(/usr/share/texmf/tex/latex/lm/ts1lmss.fd
+File: ts1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 <iith.png, id=39, 225.84375pt x 225.84375pt>
 File: iith.png Graphic file (type png)
 <use iith.png>
 Package pdftex.def Info: iith.png  used on input line 169.
 (pdftex.def)             Requested size: 112.92159pt x 112.92159pt.
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
@@ -935,21 +940,23 @@ Package rerunfilecheck Info: File `assgtide.out' has not changed.
 (rerunfilecheck)             Checksum: 4186DCD2410FAFD0A515F09EC58C2C00;564.
  ) 
 Here is how much of TeX's memory you used:
- 24548 strings out of 478287
- 451410 string characters out of 5849289
- 853326 words of memory out of 5000000
- 42301 multiletter control sequences out of 15000+600000
- 513753 words of font info for 57 fonts, out of 8000000 for 9000
+ 24579 strings out of 478287
+ 452034 string characters out of 5849289
+ 874483 words of memory out of 5000000
+ 42327 multiletter control sequences out of 15000+600000
+ 514123 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,103p,1197b,1069s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-rm.enc}</usr/share/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/sh
-are/texmf/fonts/type1/public/lm/lmss10.pfb></usr/share/texmf/fonts/type1/public
-/lm/lmss12.pfb></usr/share/texmf/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on assgtide.pdf (1 page, 95128 bytes).
+ 99i,14n,103p,1197b,1276s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/d
+vips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}</usr/shar
+e/texmf/fonts/type1/public/lm/lmmi9.pfb></usr/share/texmf/fonts/type1/public/lm
+/lmss10.pfb></usr/share/texmf/fonts/type1/public/lm/lmss12.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmss17.pfb></usr/share/texmf/fonts/type1/public/lm/lmss
+bx10.pfb>
+Output written on assgtide.pdf (1 page, 114603 bytes).
 PDF statistics:
- 82 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 500000)
+ 92 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
+ 14 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 
