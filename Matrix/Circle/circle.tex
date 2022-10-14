@@ -1,0 +1,116 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{graphicx}
+\graphicspath{{./figs/}}{}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\usepackage{listings}
+\usepackage{watermark}
+\usepackage{titlesec}
+\let\vec\mathbf
+
+\titlespacing{\subsection}{0pt}{\parskip}{-3pt}
+\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\paragraph}{0pt}{\parskip}{\parskip}
+\newcommand{\figuremacro}[5]{
+    
+}
+\lstset{
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\thiswatermark{\centering \put(0,-105.0){\includegraphics[scale=0.5]{iith.png}} }
+
+\sloppy
+\title{\mytitle}
+\title{
+Matrix Assignment - Circle
+}
+\author{Nikhil Nair}
+\begin{document}
+\maketitle
+\tableofcontents
+\bigskip
+
+
+\section{\textbf{Problem}}
+If  a circle passes through the point (a,b) and cuts the circle $x^2+y^2=4$ orthogonally, then the locus of its centre is .\\
+
+
+\section{\textbf{Solution}}
+The equation of a circle is given as,   \\
+
+${\vec{x^{\top}V_1 x} + 2\vec{u_1^{\top}x}} + f_1=0$
+\\
+\\
+The circle given in the question can be written in the above form as follows
+\\
+
+$\myvec{x & y}\myvec{1&0\\ 0&1}\myvec{x\\y} + 2\myvec{0&0}\myvec{x\\y} + f_1 = 0$\\
+\\
+where,
+
+$\vec{V_1}=\myvec{1&0\\ 0&1} ; \vec{u_1^{\top}}=\myvec{0&0} ; f_1=-4$
+\\
+
+Given that the two circles are orthogonal, therefore
+\\
+
+$r_1^2 + r_2^2 = {\lVert \vec{u_1} - \vec{u_2} \rVert}^2$
+\\
+\begin{equation}
+4 + r_2^2 = {\lVert \vec{u_1} \rVert}^2 -{\lVert \vec{u_2} \rVert}^2 -2 \vec{ u_1}^{\top}\vec{u_2} \label{eq-1}
+\end{equation}
+
+$r_1=2$ and $r_2$ are the radius of the given circles
+\\
+\\
+Now, we know
+\begin{equation}
+r_2=\sqrt {{\lVert \vec{u_2} \rVert}^2 - f_2}
+\end{equation}             \label{eq-2}
+\\
+\\
+Solving eq1 and eq2 we get,\\
+\\
+$f_2 = 4$
+\\
+\\
+The equation of circle with centre at $u_2 =\myvec{-h \\ -k}$ can be given by\\
+\\
+${\vec{x^{\top}V_2 x} + 2\vec{u_2^{\top}x}} + f_2=0$
+\\
+\\
+$\myvec{x & y}\myvec{1&0\\ 0&1}\myvec{x\\y} + 2\myvec{-h & -k}\myvec{x\\y} + 4 = 0$
+\\
+\\
+Since the circle passes through the point (a,b), the above equation can be simplified as
+\\
+\\
+$a^2 + b^2 -2ha - 2kb +4 =0 $
+\\  
+\\
+Therefore the locus of the center of circle is
+\\
+\\
+$2ha + 2kb - (a^2 + b^2 + 4) = 0$
+
+\section{\textbf{Figure}}
+\begin{figure}[h]
+    \centering
+\includegraphics[width=\columnwidth]{fig.jpg}
+    \label{fig:my_label}
+\end{figure}
+
+
+\section{\textbf{Code Link}}
+
+\begin{lstlisting}
+https://github.com/nikhilnair90/FWC-2/blob/main/Matrix/Circle/circle.py
+\end{lstlisting}
+Execute the code by using the command\\
+\textbf{python3 circle.py}
+
+
+
+\end{document}
