@@ -67,33 +67,26 @@ $r_1=2$ and $r_2$ are the radius of the given circles
 \\
 Now, we know
 \begin{equation}
-r_2=\sqrt {{\lVert \vec{u_2} \rVert}^2 - f_2}
+r_2=\lVert{ \vec{u_2} - L}\rVert
 \end{equation}             \label{eq-2}
 \\
 \\
-Solving eq1 and eq2 we get,\\
+
+\begin{equation}
+r_2^2=\lVert{ \vec{u_2}}\rVert^2+\lVert{ \vec{L}}\rVert^2+2\vec{u_2}\vec{ L}
+\end{equation}
+
+Solving eq1 and eq3 we get,\\
 \\
-$f_2 = 4$
+
+$r_1^2+\lVert{\vec{L}}\rVert^2-2\vec{u_2}^{\top}=0$
 \\
-\\
-The equation of circle with centre at $u_2 =\myvec{-h \\ -k}$ can be given by\\
-\\
-${\vec{x^{\top}V_2 x} + 2\vec{u_2^{\top}x}} + f_2=0$
-\\
-\\
-$\myvec{x & y}\myvec{1&0\\ 0&1}\myvec{x\\y} + 2\myvec{-h & -k}\myvec{x\\y} + 4 = 0$
-\\
-\\
-Since the circle passes through the point (a,b), the above equation can be simplified as
-\\
-\\
-$a^2 + b^2 -2ha - 2kb +4 =0 $
-\\  
-\\
+
 Therefore the locus of the center of circle is
 \\
-\\
-$2ha + 2kb - (a^2 + b^2 + 4) = 0$
+\begin{center}
+$ 4+\lVert{\vec{L}}\rVert^2-2\vec{u_2}^{\top}= 0$
+\end{center}
 
 \section{\textbf{Figure}}
 \begin{figure}[h]
