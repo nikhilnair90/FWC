@@ -32,115 +32,85 @@ Find the orthocenter of triangle with vertices (0,0), (3,4) and (4,0).\\
 \section{\textbf{Solution}}
 Orthocenter of a triangle is the point where perpendiculars drawn to the opposite side from each vertex of the triangle intersect.   \\
 \\
-To find the orthocenter first we find the coordinates of point Q i.e the foot of the perpendicular drawn from point B as follows\\
-\\
-
-${\vec{OA}}=O + \lambda.\vec{
-  m}$
-\\
-
-where O is the origin and $\vec{m}= A-O$
+To find the orthocenter first we find the equation of line BQ which is given by\\
 \\
 \begin{equation}
- \vec{OA}=\lambda.\myvec{
-  3\\
-  4}     \label{eq-1}
+ \vec{m_1^{\top}}(\vec{x}-B) = 0   \label{eq-1}
 \end{equation}
 \\
-Now, 
+where $\vec{m_1} = (A-O)$ 
 \\
 
-${\vec{m^{\top}}(\vec{OA}-B)} = 0$
-\\
-\\	
-
- $\vec{m^{\top}}[O + \lambda.\vec{m} - B ]= 0 $ 
-\\
-\\
-
-$\lambda.{\lVert m \rVert}^2 = \vec{m^{\top}}(O-B)$
-\\
-\\
 \begin{equation}
-	\lambda=\frac{\vec {m^{\top}}(O-B)}{{\lVert m \rVert}^2} 
-	\label{eq-2}
+ \vec{m_1^{\top}x} = \vec{m_1^{\top}}B   \label{eq-2}
 \end{equation}
 \\
-Coordinates of Point Q can be found by replacing value of $\lambda$ in eq 2
+Similarly the equation of line AP is given by\\
+\\
+\begin{equation}
+ \vec{m_2^{\top}}(\vec{x}-A) = 0   \label{eq-3}
+\end{equation}
+\\
+where $\vec{m_2} = (B-O)$ 
+\\
+
+\begin{equation}
+ \vec{m_2^{\top}x} = \vec{m_2^{\top}}A   \label{eq-4}
+\end{equation}
+\\
+ Equating eq3 and eq4 we get
+\\
+\\
+\begin{equation}
+\myvec{\vec{m_1^{\top}} \\ \vec{m_2^{\top}}}\vec{x} = \myvec{\vec{ m_1^{\top}}B \\ \vec{m_2^{\top}}A}
+\end{equation}
 \\
 \\
 
-$ Q = \frac{\vec{m^{\top}}(O-B)}{{\lVert m \rVert}^2}  . \myvec{
-  3\\
-  4} $ 
+\begin{equation}
+\vec{x} = {\myvec{\vec{m_1^{\top}} \\ \vec{m_2^{\top}}}}^{-1}{\myvec{\vec{ m_1^{\top}}B \\ \vec{m_2^{\top}}A}}
+\end{equation}                         \label{eq-6}
+where,
 \\
 \\
 
-$ Q=\frac{1}{\surd(3^2 + 4^2)}\myvec{
-  3\
-  4}\myvec{
-  4\\
-  0}\myvec{
-  3\\
-  4} $ 
+$\vec{ m_1^{\top}} = \myvec{3&&4} $
+\\
+\\
+
+$\vec{ m_2^{\top}} = \myvec{4&&0} $
+\\
+\\
+
+$\myvec{\vec{ m_1^{\top}}B} = \myvec{3&&4}\myvec{3\\4} = 12$ 
+\\
+\\
+
+$\myvec{\vec{ m_2^{\top}}A} = \myvec{4&&0}\myvec{3\\4} = 12$
 \\  
+ \\  
+ 
+The orthocentre of the triangle can be calculated by replacing the above values in eq6
 \\
-
-$ Q=\myvec{
-  1.44\\
-  1.92} $ 
-\\  
- \\
- 
- The orthocenter of the triangle can be calculated as follows
- \\
- 
- From the points,\\
- 
- A( 3, 4 )     ;        P( 3, 0 )
- 
- B( 4, 0 )     ;        Q( 1.44, 1.92 )
- 
- 
- 
- \begin{equation}
- \vec{AP} = \myvec{3\\4}+\lambda1. \myvec{ 0\\-4}
- \end{equation}
+\\ 
+\begin{equation}
+\vec{x} = {\myvec{3&4\\4&0}}^{-1}{\myvec{12\\12}}
+\end{equation}
 
 
 
 
 \begin{equation}
-\vec{BQ} = \myvec{4\\0}+\lambda2. \myvec{-2.56\\1.92}
+\vec{x} = \frac{-1}{16}{\myvec{0&-4\\-4&3}}{\myvec{12\\12}}
 \end{equation}
   \\
-  
-  where $\lambda1$ and $\lambda2$ are scalars
-  \\  
- \vspace{4cm}
- \\
- Solving eq3 and eq4 we get the value of 
- \\
- \begin{center}
- $\lambda2$ = 0.39
- \end{center}
- \vspace{0.5cm}
- 
-  Replace the value of $\lambda2$ in eq4 to find the intersection of 
-  $\vec{AP}$ and $\vec{BQ}$ , ie point X.
-\vspace{1cm}
-\\
-
-X = $\myvec{4\\0}+ 0.39. \myvec{-2.56\\1.92}$
-\\
-\\
-\vspace{0.3cm}
-
+  \\
 Therefore the orthocenter of the triangle is
 \\
+\begin{center}
+$\vec{x} = \myvec{3\\0.75}$
+\end{center}
 
-X = $\myvec{3\\0.75}$
-\\
 
 \section{\textbf{Figure}}
 \begin{figure}[h]
