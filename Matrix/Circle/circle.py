@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from numpy import linalg as LA
 import math
 import sys  #for path to external scripts
-#sys.path.insert(0,'/sdcard/nikhil/matrix')
+
 import subprocess
 import shlex
 
@@ -21,21 +21,11 @@ def circ_gen(O,r):
   x_circ[1,:] = r*np.sin(theta)
   x_circ = (x_circ.T + O).T
   return x_circ
- 
-
-##Generating points on a circular arc
-#def circ_arc(O,r,theta1,theta2,len):
-#  theta = np.linspace(theta1,theta2,len)*np.pi/180
-#  x_circ = np.zeros((2,len))
-#  x_circ[0,:] = r*np.cos(theta)
-#  x_circ[1,:] = r*np.sin(theta)
-#  x_circ = (x_circ.T + O).T
-#  return x_circ
 
 
 #Input parameters
 L = np.array(([3,4]))    #point(a,b) on circle 2,3 
-X = np.arange(-5,15,1)   #set of x points to draw locus
+X = np.arange(-5,15,1)   #x points to draw locus
 
 
 #Centre and radius of circle1
@@ -47,7 +37,7 @@ r1 = np.array(([2]))
 y1=(L[0]**2+L[1]**2+r1**2)
 y2=2*L[0]
 y3=2*L[1]
-Y=(y1-y2*X)/y3    #set of y points to draw locus
+Y=(y1-y2*X)/y3    #y points to draw locus
 
 plt.plot(X,Y,'r--',label='Locus ');
 
@@ -58,14 +48,15 @@ t = (y1-y2*g)/y3
 u2 = np.array([g,t])
 #r2 = math.sqrt(LA.norm(u2)**2 - 4)
 r2= LA.norm(u2-L)
+#print(r2)
 
 #Computation of center and radius of circle3      
 h = 5
 k = (y1-y2*h)/y3 
 u3 = np.array([h,k]) 
-#r3 = math.sqrt(LA.norm(u3)**2 - 4)                                    
 r3=LA.norm(u3-L)
-
+#r3 = math.sqrt(LA.norm(u3)**2 - 4)                                    
+#print(r3)
 
 #Generating the circle
 x_circ1= circ_gen(u1,r1) 
@@ -106,7 +97,7 @@ plt.axis('equal')
 plt.title('Locus of center of circle')
 plt.savefig('/sdcard/nikhil/matrix/circle/fig.pdf')
 subprocess.run(shlex.split("termux-open /sdcard/nikhil/matrix/circle/fig.pdf"))
-plt.show()
+#plt.show()
 
 
 
