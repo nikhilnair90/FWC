@@ -71,47 +71,45 @@ $r_1=2$ and $r_2$ are the radius of the given circles
 \\
 Now, we know
 \begin{equation}
-r_2=\lVert{ \vec{u_2} - \vec{L}}\rVert
+r_2=\lVert{ \vec{L} +\vec{u_2}}\rVert
 \end{equation}             \label{eq-2}
 \\
 where L is a point (a,b) on the circle 2
 \\
 \\
-$\vec{u_2}$ i.e centre of 2nd circle is taken as $\myvec{g&t}$
-
+$\vec{-u_2}$ i.e centre of 2nd circle$
+\vspace*{0.3cm}
 \begin{equation}
-r_2^2=\lVert{ \vec{u_2}}\rVert^2+\lVert{ \vec{L}}\rVert^2-2\vec{u_2}^{\top}\vec{ L}                  \label{eq-3}  
+r_2^2=\lVert{ \vec{u_2}}\rVert^2+\lVert{ \vec{L}}\rVert^2+2\vec{L}^{\top}\vec{u_2}                  \label{eq-3}  
 \end{equation}            
 \\
-Solving $\ref{eq-1}$ and $\ref{eq-3}$ we get,\\
+Solving $(\ref{eq-1})$ and $(\ref{eq-3})$ we get,\\
 
 \begin{center}
-$ r_1^2+\lVert{\vec{L}}\rVert^2-2\vec{u_2}^{\top}\vec{L}= 0$
+$ r_1^2+\lVert{\vec{L}}\rVert^2-2\vec{L}^{\top}\vec{u_2}= 0$
 \end{center}
 \vspace{0.4cm}
 
-$r_1^2+\vec{L}^{\top}\vec{L}-2\vec{u_2}^{\top}\vec{L}=0$
+$r_1^2+\vec{L}^{\top}\vec{L}-2\vec{L}^{\top}\vec{u_2}=0$
 \\
 \\
 
-$r_1^2+\myvec{a&b}\myvec{a\\b}-2\myvec{g\\t}\myvec{a&b}=0$
-\\
-\\
-
-$r_1^2+a^2+b^2-2ga-2tb=0$
+$2\vec{L}^{\top}\vec{u_2}=r_1^2+\vec{L}^{\top}\vec{L}$
 \\
 \\
 
 Therefore the locus of the center of circle2 is
 \\
 \begin{center}
-$2ga+2tb-(a^2+b^2+4)=0$
+	$\vec{L}^{\top}\vec{u_2}=2+\frac{1}{2}\lVert{\vec{L}}\rVert^2$
 \end{center}
+\vspace{0.3cm}
 
-\vspace*{3.5cm}
+Which is a line equation in the form $\vec{n}^{\top}\vec{x} = C$
+
+\vspace*{5cm}
 
 \section{\textbf{Figure}}
-\vspace*{1cm}
 \begin{figure}[h]
     \centering
 \includegraphics[width=\columnwidth]{fig.jpg}
