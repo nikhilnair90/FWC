@@ -57,14 +57,26 @@ T = t*e2
 
 plt.axline(G,T, color='red', linestyle='--',label='$Locus$')
 
-#Computation of center and radius of circle2
+#Computation of  radius of circle2
 u2=G
 r2 = LA.norm(G-A)
 
+#Computation of radius of circle3 
+u3=T
+r3 = LA.norm(T-A)
+
+#To check orthogonality
+S1=r1**2+r3**2
+S2=LA.norm(u3-u1)**2
+if round(S1[0])==round(S2):
+    print('S1=S2, hence circles are orthogonal')
+else:
+    print('S!=S2, hence circles are not orthogonal')
 
 #Generating the circle
 x_circ1= circ_gen(u1,r1) 
 x_circ2= circ_gen(G,r2) 
+x_circ3= circ_gen(T,r3)
 
 # use set_position
 ax = plt.gca()
@@ -77,12 +89,12 @@ ax.spines['bottom'].set_position('zero')
 #Plotting the circle
 plt.plot(x_circ1[0,:],x_circ1[1,:],color='orange',label='$Circle1$')
 plt.plot(x_circ2[0,:],x_circ2[1,:],color='green',label='$Circle2$')
-
+plt.plot(x_circ3[0,:],x_circ3[1,:],color='yellow',label='$Circle3$')
 
 #Labeling the coordinates
-tri_coords = np.vstack((u1,A,u2)).T
+tri_coords = np.vstack((u1,A,u2,u3)).T
 plt.scatter(tri_coords[0,:], tri_coords[1,:])
-vert_labels = ['u1(0,0)','A(a,b)','u2']
+vert_labels = ['u1(0,0)','A(a,b)','u2','u3']
 for i, txt in enumerate(vert_labels):
     plt.annotate(txt, # this is the text
             (tri_coords[0,i], tri_coords[1,i]), # this is the point to label
@@ -99,7 +111,7 @@ plt.grid(True) # minor
 plt.axis('equal')
 plt.title('Locus of center of circle')
 plt.savefig('/sdcard/nikhil/matrix/circle/fig.pdf')
-subprocess.run(shlex.split("termux-open /sdcard/nikhil/matrix/circle/fig.pdf"))
+#subprocess.run(shlex.split("termux-open /sdcard/nikhil/matrix/circle/fig.pdf"))
 #plt.show()
 
 
