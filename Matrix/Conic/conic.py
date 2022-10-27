@@ -14,6 +14,31 @@ a=3
 b=2
 theta=math.pi/4
 
+#defining function
+def f(theta):
+ return (a*b)/np.sin(2*theta);
+ 
+#defining derivative of f(theta)
+df=lambda theta:-2*a*b*(np.cos(2*theta)/(np.sin(2*theta))**2);
+
+#minimum area using gradient descent
+cur_x=1
+previous_step_size=1
+iters=0
+precision=0.000000001
+alpha=0.0001
+max_iters=100000000
+
+while (previous_step_size>precision)&(iters<max_iters):
+ prev_x=cur_x
+ cur_x-=alpha*df(prev_x)
+ previous_step_size=abs(cur_x-prev_x)
+ iters+=1
+min_val=f(cur_x)
+print('minimum area of triangle is',min_val,"at","Theta  =",cur_x*(180/math.pi), 'degrees')
+
+
+
 
 #Generating points on an ellipse
 def ellipse_gen(a,b):
@@ -31,9 +56,7 @@ elli = ellipse_gen(a,b)
 q1= a*np.cos(theta)
 q2= b*np.sin(theta)
 Q=np.array(([q1,q2]))
-
-X=np.arange(0,4.31,0.1)
-Y=((a*b)**2 - ((b**2)*q1*X))/((a**2)*q2)
+V=np.block([[b**2,0],[0,a**2]])
 
 
 # use set_position
@@ -48,14 +71,23 @@ ax.spines['bottom'].set_position('zero')
 plt.plot(elli[0,:],elli[1,:],'green',label='Ellipse')
 
 #plotting the tangent
-plt.plot(X,Y,'red',label='Tangent')
+C=(a*b)**2
+A=V@Q
+e1=np.array(([1,0]))
+e2=np.array(([0,1]))
+
+r = C/(A@e1)
+R = r*e1
+p = C/(A@e2)
+P = p*e2
+
+plt.axline(R,P, color='red',label='Tangent')
+
 
 #shading the area
-plt.fill_between(X,Y,0,color='orange', alpha=0.5)
+plt.fill_between(R,P,0,color='orange', alpha=0.5)
 
 
-P=np.array(([0,b/np.sin(theta)]))
-R=np.array(([a/np.sin(theta),0]))
 O=np.array(([0,0]))
 
 #Labeling the coordinates
@@ -75,7 +107,7 @@ plt.legend()
 plt.grid(True) # minor
 plt.axis('equal')
 plt.title('Min. area of triangle formed by the tangent')
-plt.savefig('/sdcard/nikhil/matrix/conic/fig.pdf')
-subprocess.run(shlex.split("termux-open /sdcard/nikhil/matrix/conic/fig.pdf"))
+#plt.savefig('/sdcard/nikhil/matrix/conic/fig2.pdf')
+#subprocess.run(shlex.split("termux-open /sdcard/nikhil/matrix/conic/fig2.pdf"))
 #plt.show()
 
