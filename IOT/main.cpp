@@ -3,8 +3,8 @@
 #include <ArduinoOTA.h>
 
 #ifndef STASSID
-#define STASSID "Galaxy S21 FE 5G5554"  // Replace with your network credentials
-#define STAPSK  "acif5658"
+#define STASSID "Device name"  // Replace with your network credentials
+#define STAPSK  "password"
 #endif
 
 const char* ssid = STASSID;
