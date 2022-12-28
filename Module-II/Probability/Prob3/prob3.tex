@@ -42,15 +42,17 @@ Consider each trial results in success (i.e Heads) or failure (i.e Tails).
 \\
  
 Let p and q = (1 - p) be the probability of success and failure respectively.\\
-\begin{equation}
-p = \frac{1}{2} ;  q = 1 - p = \frac{1}{2}    \label{1}
-\end{equation}\\
+\begin{align}
+p = \frac{1}{2}               \label{1}
+\\            
+q = 1 - p = \frac{1}{2}       \label{2}
+\end{align}\\
 In n Bernoulli trials with x success and (n - x) failures, the probablity of x success in n- Bernoulli trials can be given as\\
-\begin{equation}
-^nC_xp^{x} q^{n-x}  \label{2}
-\end{equation}
+\begin{align}
+^nC_xp^{x} q^{n-x}             \label{3}
+\end{align}
 \\
-Now the distribution of number of successes using ($\ref{1}$) $\&$ ($\ref{2}$) can be given as,
+Now the distribution of number of successes using $(\ref{1}),(\ref{2}) \& (\ref{3})$ can be given as,
 \begin{center}
 \begin{tabular}{ |c |c |c |c |c |}
  \hline
@@ -59,13 +61,17 @@ Now the distribution of number of successes using ($\ref{1}$) $\&$ ($\ref{2}$) c
  P(X)  &  $^3C_0(\frac{1}{2})^{3}$  & $^3C_1(\frac{1}{2})^{3}$  &  $^3C_2(\frac{1}{2})^{3}$ & $^3C_3(\frac{1}{2})^{3}$\\
  \hline
  
- \end{tabular}
-
+\end{tabular}
 \end{center}
 
- Mean of X = $\mu = \sum_{i=1}^{n=3} x_i P(x_i)$\\
+\begin{align}
+\text{Mean of X} = \mu = \sum_{i=1}^{n=3} x_i P(x_i)
+\\
+\begin{split}
+\mu = 0 \times ^3C_0(\frac{1}{2})^{3} + 1 \times ^3C_1(\frac{1}{2})^{3} &+ 2 \times ^3C_2(\frac{1}{2})^{3} \\ &+ 3 \times ^3C_3(\frac{1}{2})^{3}
+\end{split}
+\\
+\therefore \text{Mean of X} = \mu = 1.5
+\end{align}
 
-$\mu = 0 \times ^3C_0(\frac{1}{2})^{3} + 1 \times ^3C_1(\frac{1}{2})^{3} + 2 \times ^3C_2(\frac{1}{2})^{3} + 3 \times ^3C_3(\frac{1}{2})^{3}$\\
-
-$\therefore$ Mean of X = $\mu$ = 1.5
 \end{document}
