@@ -41,37 +41,69 @@ Find the mean number of heads in three tosses of a fair coin.
 Consider each trial results in success (i.e Heads) or failure (i.e Tails).
 \\
  
-Let $p$ and $q = (1 - p)$ be the probability of success and failure respectively.\\
+Let $p$ and $q = (1 - p)$ be the probability of success and failure respectively.
 \begin{align}
 p &= \frac{1}{2}&               \label{1}
 \\            
 q &= 1 - p = \frac{1}{2}&       \label{2}
-\end{align}\\
-In n Bernoulli trials with $x$ success and $(n - x)$ failures, the probablity of $x$ success in $n$- Bernoulli trials can be given as\\
+\end{align}
+
+In $n$ Bernoulli trials with $k$ success and $(n - k)$ failures, the probablity of $k$ success in $n$- Bernoulli trials can be given as\\
 \begin{align}
-^nC_xp^{x} q^{n-x}             \label{3}
+P(X =k) &= {}^nC_kp^{k} q^{n-k}&             \label{3}
 \end{align}
 \\
+
 Now the distribution of number of successes using $(\ref{1}),(\ref{2}) \& (\ref{3})$ can be given as,
 \begin{center}
 \begin{tabular}{ |c |c |c |c |c |}
  \hline
- X  &  0 &  1  &  2 & 3\\
+ k  &  0 &  1  &  2 & 3\\
  \hline
- P(X)  &  $^3C_0(\frac{1}{2})^{3}$  & $^3C_1(\frac{1}{2})^{3}$  &  $^3C_2(\frac{1}{2})^{3}$ & $^3C_3(\frac{1}{2})^{3}$\\
+ P(X=k)  &  $^3C_0(\frac{1}{2})^{3}$  & $^3C_1(\frac{1}{2})^{3}$  &  $^3C_2(\frac{1}{2})^{3}$ & $^3C_3(\frac{1}{2})^{3}$\\
  \hline
- 
 \end{tabular}
 \end{center}
 
+MGF of binomial distribution for discrete random variable is given by
+\\
 \begin{align}
-&\text{Mean of X} = \mu = \sum_{i=1}^{n=3} x_i P(x_i)&
+&M_k(t) = \sum_{k=0}^{n} e^{tk} P(k)&
+\\
+&M_k(t) = \sum_{k=0}^{n} e^{tk} {}^nC_kp^{k} q^{n-k}&
+\\
+&M_k(t) = \sum_{k=0}^{n} {}^nC_k (pe^t)^{k} q^{n-k}&
 \\
 \begin{split}
-\mu = 0 \times ^3C_0(\frac{1}{2})^{3} + 1 \times ^3C_1(\frac{1}{2})^{3} + 2 \times ^3C_2(\frac{1}{2})^{3} \\+ 3 \times ^3C_3(\frac{1}{2})^{3}
-\end{split}
+M_k(t) = {}^nC_0 (pe^t)^{0} q^{n} + {}^nC_1 (pe^t)^{1} q^{n-1} + {}^nC_2 (pe^t)^{2} q^{n-2} \\+.....+ {}^nC_n (pe^t)^{n} q^{n-n}
 \\
-&\therefore \text{Mean of X} = \mu = 1.5&
+=  q^{n} + {}^nC_1 (pe^t)^{1} q^{n-1} + {}^nC_2 (pe^t)^{2} q^{n-2}+.....+ (pe^t)^{n}                   \label{7}
+\end{split}
 \end{align}
+\\
+
+Using binomial expansion $(\ref{7})$ can be simplified as,
+\begin{align}
+M_k(t)= (q + pe^t)^n
+\end{align}
+\\
+
+Mean of the binomial distribution is given by,
+\begin{align}
+\text{Mean}&= \frac{dM_k(t)}{dt}|_{t=0}&
+\\
+&= \frac{d(q + pe^t)^n}{dt}|_{t=0}&
+\\
+&=npe^t(q + pe^t)^{n-1}|_{t=0}&
+\\
+&= np(q + p)^{n-1}&
+\\
+\therefore \text{Mean} &= np& {}\because(p+q=1)
+\\
+&= 3\times\frac{1}{2}= 1.5&
+\end{align}
+\\
+
+The mean number of heads in three tosses of a fair coin is $1.5$
 
 \end{document}
