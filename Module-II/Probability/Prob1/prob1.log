@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.13)  28 DEC 2022 16:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.13)  31 DEC 2022 17:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -329,7 +329,7 @@ Package pdftex.def Info: iith.png  used on input line 49.
 Here is how much of TeX's memory you used:
  5117 strings out of 478287
  79173 string characters out of 5849289
- 373272 words of memory out of 5000000
+ 374272 words of memory out of 5000000
  23279 multiletter control sequences out of 15000+600000
  501776 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -340,7 +340,7 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on prob1.pdf (1 page, 53401 bytes).
+Output written on prob1.pdf (1 page, 53593 bytes).
 PDF statistics:
  36 PDF objects out of 1000 (max. 8388607)
  20 compressed objects within 1 object stream

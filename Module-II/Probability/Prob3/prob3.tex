@@ -68,14 +68,14 @@ Now the distribution of number of successes using $(\ref{1}),(\ref{2}) \& (\ref{
 MGF of binomial distribution for discrete random variable is given by
 \\
 \begin{align}
-&M_k(t) = \sum_{k=0}^{n} e^{tk} P(k)&
+&M_k(t) = E[e^{tk}] = \sum_{k=0}^{n} e^{tk} P(k)&
 \\
-&M_k(t) = \sum_{k=0}^{n} e^{tk} {}^nC_kp^{k} q^{n-k}&
+&E[e^{tk}] = \sum_{k=0}^{n} e^{tk} {}^nC_kp^{k} q^{n-k}&
 \\
-&M_k(t) = \sum_{k=0}^{n} {}^nC_k (pe^t)^{k} q^{n-k}&
+&E[e^{tk}] = \sum_{k=0}^{n} {}^nC_k (pe^t)^{k} q^{n-k}&
 \\
 \begin{split}
-M_k(t) = {}^nC_0 (pe^t)^{0} q^{n} + {}^nC_1 (pe^t)^{1} q^{n-1} + {}^nC_2 (pe^t)^{2} q^{n-2} \\+.....+ {}^nC_n (pe^t)^{n} q^{n-n}
+E[e^{tk}] = {}^nC_0 (pe^t)^{0} q^{n} + {}^nC_1 (pe^t)^{1} q^{n-1} + {}^nC_2 (pe^t)^{2} q^{n-2} \\+.....+ {}^nC_n (pe^t)^{n} q^{n-n}
 \\
 =  q^{n} + {}^nC_1 (pe^t)^{1} q^{n-1} + {}^nC_2 (pe^t)^{2} q^{n-2}+.....+ (pe^t)^{n}                   \label{7}
 \end{split}
@@ -84,13 +84,13 @@ M_k(t) = {}^nC_0 (pe^t)^{0} q^{n} + {}^nC_1 (pe^t)^{1} q^{n-1} + {}^nC_2 (pe^t)^
 
 Using binomial expansion $(\ref{7})$ can be simplified as,
 \begin{align}
-M_k(t)= (q + pe^t)^n
+E[e^{tk}]= (q + pe^t)^n
 \end{align}
 \\
 
 Mean of the binomial distribution is given by,
 \begin{align}
-\text{Mean}&= \frac{dM_k(t)}{dt}|_{t=0}&
+\text{Mean}&= \frac{dE[e^{tk}]}{dt}|_{t=0}&
 \\
 &= \frac{d(q + pe^t)^n}{dt}|_{t=0}&
 \\

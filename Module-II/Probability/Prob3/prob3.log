@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.13)  30 DEC 2022 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.9.13)  30 DEC 2022 16:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -340,7 +340,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 68--70
  []
 
 
-Overfull \hbox (31.09895pt too wide) detected at line 82
+Overfull \hbox (30.79416pt too wide) detected at line 82
 []
  []
 
@@ -397,7 +397,7 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
 type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb>
-Output written on prob3.pdf (1 page, 104249 bytes).
+Output written on prob3.pdf (1 page, 104828 bytes).
 PDF statistics:
  61 PDF objects out of 1000 (max. 8388607)
  35 compressed objects within 1 object stream
