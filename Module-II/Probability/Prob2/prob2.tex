@@ -7,6 +7,7 @@
 \usepackage{watermark}
 \usepackage{titlesec}
 \let\vec\mathbf
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 
 \titlespacing{\subsection}{0pt}{\parskip}{-3pt}
 \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
@@ -35,7 +36,7 @@ Probability Assignment-II
 
 
 \section{\textbf{Problem }}
-Given that the events A and B are such that $\Pr{(A)}=\frac{1}{2}, \Pr{(A + B)}=\frac{3}{5}$ and $\Pr{(B)}=p$. Find $p$ if they are \\
+Given that the events A and B are such that $\pr{A}=\frac{1}{2}, \pr{A + B}=\frac{3}{5}$ and $\pr{B}=p$. Find $p$ if they are \\
 \begin{enumerate}
     \item mutually exclusive
     \item independent
@@ -50,7 +51,7 @@ Given A and B are mutually exclusive events,\\
 then,
 
 \begin{align}
-\Pr{(A + B)} &=\Pr{(A)} + \Pr{(B)}&
+\pr{A + B} &=\pr{A} + \pr{B}&
 \\
 \frac{3}{5}&=\frac{1}{2}+p&
 \\
@@ -64,9 +65,9 @@ Given A and B are independent events,\\
 then,
 
 \begin{align}
-\Pr{(A + B)} &=\Pr{(A)} + \Pr{(B)} - \Pr{(A B)}& 
+\pr{A + B} &=\pr{A} + \pr{B} - \pr{A B}& 
 \\
-\Pr{(A + B)} &=\Pr{(A)} + \Pr{(B)} - \Pr{(A)}\Pr{(B)}&
+\pr{A + B} &=\pr{A} + \pr{B} - \pr{A}\pr{B}&
 \\
 \frac{3}{5}&=\frac{1}{2}+ p - \frac{p}{2}&
 \\
