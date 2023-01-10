@@ -7,6 +7,7 @@
 \usepackage{watermark}
 \usepackage{titlesec}
 \let\vec\mathbf
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
 
 \titlespacing{\subsection}{0pt}{\parskip}{-3pt}
 \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
@@ -47,54 +48,42 @@ p &= \frac{1}{2}&               \label{1}
 \\            
 q &= 1 - p = \frac{1}{2}&       \label{2}
 \end{align}
-
+\\
 In $n$ Bernoulli trials with $k$ success and $(n - k)$ failures, the probablity of $k$ success in $n$- Bernoulli trials can be given as\\
 \begin{align}
-P(X =k) &= {}^nC_kp^{k} q^{n-k}&             \label{3}
-\end{align}
+\pr{X =k}  &= 
+\begin{cases}
+{}^nC_kp^{k}q^{n-k} & 0 \le k \le n
 \\
+0 & \text{otherwise}                 \label{3}
+\end{cases}
+\end{align}
+where, $n = 3$\\
 
-Now the distribution of number of successes using $(\ref{1}),(\ref{2}) \& (\ref{3})$ can be given as,
-\begin{center}
-\begin{tabular}{ |c |c |c |c |c |}
- \hline
- k  &  0 &  1  &  2 & 3\\
- \hline
- P(X=k)  &  $^3C_0(\frac{1}{2})^{3}$  & $^3C_1(\frac{1}{2})^{3}$  &  $^3C_2(\frac{1}{2})^{3}$ & $^3C_3(\frac{1}{2})^{3}$\\
- \hline
-\end{tabular}
-\end{center}
-
-MGF of binomial distribution for discrete random variable is given by
+The generating function (or z-transform) of $\pr{X =k}$ for non-negative integer values is defined as 
 \\
 \begin{align}
-&M_k(t) = E[e^{tk}] = \sum_{k=0}^{n} e^{tk} P(k)&
+&M_k(z) = E[z^{k}] = \sum_{k=0}^{n} z^{k} \pr{k}&
 \\
-&E[e^{tk}] = \sum_{k=0}^{n} e^{tk} {}^nC_kp^{k} q^{n-k}&
+&E[z^{k}] = \sum_{k=0}^{n} z^{k} {}^nC_kp^{k} q^{n-k}&
 \\
-&E[e^{tk}] = \sum_{k=0}^{n} {}^nC_k (pe^t)^{k} q^{n-k}&
-\\
-\begin{split}
-E[e^{tk}] = {}^nC_0 (pe^t)^{0} q^{n} + {}^nC_1 (pe^t)^{1} q^{n-1} + {}^nC_2 (pe^t)^{2} q^{n-2} \\+.....+ {}^nC_n (pe^t)^{n} q^{n-n}
-\\
-=  q^{n} + {}^nC_1 (pe^t)^{1} q^{n-1} + {}^nC_2 (pe^t)^{2} q^{n-2}+.....+ (pe^t)^{n}                   \label{7}
-\end{split}
+&E[z^{k}] = \sum_{k=0}^{n} {}^nC_k  q^{n-k}(pz)^{k}&      \label{6}
 \end{align}
 \\
-
-Using binomial expansion $(\ref{7})$ can be simplified as,
+Using binomial theorem eq($\ref{6}$) can be simplified as,
+\\
 \begin{align}
-E[e^{tk}]= (q + pe^t)^n
+E[z^{k}]= (q + pz)^n
 \end{align}
 \\
-
-Mean of the binomial distribution is given by,
+Now,\\
+Mean is defined as the 1st moment of $E[z^{k}]$ i.e,
 \begin{align}
-\text{Mean}&= \frac{dE[e^{tk}]}{dt}|_{t=0}&
+\text{Mean}&= \frac{dE[z^{k}]}{dz}|_{z=1}&
 \\
-&= \frac{d(q + pe^t)^n}{dt}|_{t=0}&
+&= \frac{d(q + pz)^n}{dz}|_{z=1}&
 \\
-&=npe^t(q + pe^t)^{n-1}|_{t=0}&
+&=np(q + pz)^{n-1}|_{z=1}&
 \\
 &= np(q + p)^{n-1}&
 \\
@@ -108,6 +97,7 @@ The mean number of heads in three tosses of a fair coin is $1.5$
 \\
 
 The following code calculates the mean.
+
 \begin{lstlisting}
 https://github.com/nikhilnair90/FWC/tree/main/Module-II/Probability/Prob3/Code/prob3.py
 \end{lstlisting}
