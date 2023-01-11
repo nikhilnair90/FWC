@@ -10,7 +10,8 @@ print("Mean number of heads in three tosses of a coin is", mean_calculated)
 
 
 #Simulating samples 
-S = np.random.randint(k[0],k[3] + 1, size=trials)           
+#S = np.random.randint(k[0],k[3] + 1, size=trials) 
+S = np.random.choice(k, p=P_k, size=trials)          
 Samples = list(S)
 
 #Generating PDF through simulated samples
