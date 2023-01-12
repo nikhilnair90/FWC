@@ -63,40 +63,34 @@ where, $n = 3$\\
 The generating function (or z-transform) of $\pr{X =k}$ for non-negative integer values is defined as 
 \\
 \begin{align}
-&M_k(z) = E[z^{k}] = \sum_{k=0}^{n} z^{k} \pr{k}&
+&M_X(z) = E[z^{X=k}] = \sum_{k=0}^{n} P_X(k)z^{-k}&
 \\
-&E[z^{k}] = \sum_{k=0}^{n} z^{k} {}^nC_kp^{k} q^{n-k}&
-\\
-&E[z^{k}] = \sum_{k=0}^{n} {}^nC_k  q^{n-k}(pz)^{k}&      \label{6}
-\end{align}
-\\
-Using binomial theorem eq($\ref{6}$) can be simplified as,
-\\
-\begin{align}
-E[z^{k}]= (q + pz)^n
-\end{align}
-\\
-Now,\\
-Mean is defined as the 1st moment of $E[z^{k}]$ i.e,
-\begin{align}
-\text{Mean}&= \frac{dE[z^{k}]}{dz}|_{z=1}&
-\\
-&= \frac{d(q + pz)^n}{dz}|_{z=1}&
-\\
-&=np(q + pz)^{n-1}|_{z=1}&
-\\
-&= np(q + p)^{n-1}&
-\\
-\therefore \text{Mean} &= np& {}\because(p+q=1)
-\\
-&= 3\times\frac{1}{2}= 1.5&
+&M_X(z^{-1}) = E[z^{-X}] = \sum_{k=0}^{n} P_X(k) z^{k}&
 \end{align}
 \\
 
+Now, mean is defined as the 1st moment of $E[z^{-X}]$ at z=1 i.e,
+\begin{align}
+\text{Mean}&= \frac{dE[z^{-X}]}{dz}|_{z=1}&
+\\
+&= \frac{d}{dz}\sum_{k=0}^{n} P_X(k) z^{k}|_{z=1}&
+\\
+&=\sum_{k=0}^{n} k P_X(k) z^{k-1}|_{z=1}&
+\\
+&= \sum_{k=0}^{n} k P_X(k)&
+\\
+\therefore \text{Mean} &= \sum_{k=0}^{n=3} k {}^nC_kp^{k}q^{n-k}&
+\\
+= {}^3C_1&\left(\frac{1}{2}\right)\left(\frac{1}{2}\right)^{2}+2\times{}^3C_2\left(\frac{1}{2}\right)^{2}\left(\frac{1}{2}\right)& \nonumber \\ 
+& \quad+3\times{}^3C_3\left(\frac{1}{2}\right)^{3}&
+\\
+\Rightarrow\text{Mean} &= 1.5&
+\end{align}
+\\
 The mean number of heads in three tosses of a fair coin is $1.5$
 \\
 
-The following code calculates the mean.
+The following code simulates the mean.
 
 \begin{lstlisting}
 https://github.com/nikhilnair90/FWC/tree/main/Module-II/Probability/Prob3/Code/prob3.py
