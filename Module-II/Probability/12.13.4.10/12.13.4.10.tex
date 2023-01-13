@@ -39,19 +39,22 @@ Find the mean number of heads in three tosses of a fair coin.
 
 
 \section{\textbf{Solution }}
-Consider each trial results in success (i.e Heads) or failure (i.e Tails).
+Consider each trial results in success (i.e Heads) or failure (i.e Tails) represented by 1 and 0 respectively.
 \\
- 
-Let $p$ and $q = (1 - p)$ be the probability of success and failure respectively.
+
+Let $X_i \in \left\lbrace 1,0\right\rbrace  , i = 1,2,3$ be the random variables representing the outcome for each coin toss. 
+\\
+
+$p$ and $q = (1 - p)$ are the probability of success and failure respectively.
 \begin{align}
-p &= \frac{1}{2}&               \label{1}
+& p = P_{X_i}(1) = \frac{1}{2}&               \label{1}
 \\            
-q &= 1 - p = \frac{1}{2}&       \label{2}
+& q = 1 - p = P_{X_i}(0) = \frac{1}{2}&       \label{2}
 \end{align}
-\\
+
 In $n$ Bernoulli trials with $k$ success and $(n - k)$ failures, the probablity of $k$ success in $n$- Bernoulli trials can be given as\\
 \begin{align}
-\pr{X =k}  &= 
+\pr{X_i =k}  &= 
 \begin{cases}
 {}^nC_kp^{k}q^{n-k} & 0 \le k \le n
 \\
@@ -60,30 +63,38 @@ In $n$ Bernoulli trials with $k$ success and $(n - k)$ failures, the probablity 
 \end{align}
 where, $n = 3$\\
 
-The generating function (or z-transform) of $\pr{X =k}$ for non-negative integer values is defined as 
+The generating function (or z-transform) of $\pr{X_i =k}$  is defined as 
 \\
 \begin{align}
-&M_X(z) = E[z^{X=k}] = \sum_{k=-\infty}^{\infty} P_X(k)z^{-k}&
+M_{X_i}(z)& = E[z^{X_i}] = \sum_{k=-\infty}^{\infty} P_{X_i}(k)z^{-k}&
 \\
-&M_X(z^{-1}) = E[z^{-X}] = \sum_{k=-\infty}^{\infty} P_X(k) z^{k}&
+\text{For a}&\text{ single coin toss,} &   \nonumber
 \\
-&\text{From eq} (\ref{3})&  \nonumber
+E[z^{X_i}]& = \sum_{k=0}^{1} P_{X_i}(k) z^{-k}&
 \\
-&E[z^{-X}] = \sum_{k=0}^{n}  {}^nC_kp^{k} q^{n-k} z^{k}&
+&=  P_{X_i}(0) z^{0} + P_{X_i}(1) z^{-1}&
 \\
-&E[z^{-X}] = \sum_{k=0}^{n} {}^nC_k  q^{n-k}(pz)^{k}&      \label{6}
+&= q+pz^{-1}&
 \end{align}
-\\
-Using binomial theorem eq($\ref{6}$) can be simplified as,
+$\therefore$n number of tosses can be represented as,
 \\
 \begin{align}
-E[z^{-X}]= (q + pz)^n
+E[z^{X_1+X_2+...+X_n}]&= E[z^{X_1}z^{X_2}....z^{X_n}]& \nonumber
+\\
+&= E[z^{X_1}]E[z^{X_2}]....E[z^{X_n}]&
+\end{align} 
+
+($\because X_1,X_2,...,X_n$are independent and identically distributed)
+\\
+
+$\Rightarrow M_{X_i}(z)$ for n number of coin tosses is
+\begin{align}
+ M_{X_i}(z)&= (q + pz^{-1})^n&
 \end{align}
-\\
-Now,\\
-Mean is defined as the 1st moment of $E[z^{-X}]$ at z=1 i.e,
+
+Now, mean is defined as the 1st moment of $M_{X_i}(z^{-1})$ at z=1 i.e,
 \begin{align}
-\text{Mean}&= \frac{dE[z^{-X}]}{dz}|_{z=1}&
+\text{Mean}&= \frac{dM_{X_i}(z^{-1})}{dz}|_{z=1}&
 \\
 &= \frac{d(q + pz)^n}{dz}|_{z=1}&
 \\
