@@ -60,26 +60,29 @@ In $n$ Bernoulli trials with $k$ success and $(n - k)$ failures, the probablity 
 \end{align}
 where, $n = 3$\\
 
-The generating function (or z-transform) of $\pr{X =k}$ for non-negative integer values is defined as 
+The generating function (or z-transform) of $\pr{X =k}$  is defined as 
 \\
 \begin{align}
-&M_X(z) = E[z^{X=k}] = \sum_{k=0}^{n} P_X(k)z^{-k}&
+&M_X(z) = E[z^{X=k}] = \sum_{k=-\infty}^{\infty} P_X(k)z^{-k}&
 \\
-&M_X(z^{-1}) = E[z^{-X}] = \sum_{k=0}^{n} P_X(k) z^{k}&
+&M_X(z^{-1})  = \sum_{k=-\infty}^{\infty} P_X(k) z^{k}&
 \end{align}
 \\
 
-Now, mean is defined as the 1st moment of $E[z^{-X}]$ at z=1 i.e,
+Now, mean is defined as the 1st moment of $M_X(z^{-1})$ at z=1 i.e,
 \begin{align}
-\text{Mean}&= \frac{dE[z^{-X}]}{dz}|_{z=1}&
+\text{Mean}&= \frac{dM_X(z^{-1})
+}{dz}|_{z=1}&
 \\
-&= \frac{d}{dz}\sum_{k=0}^{n} P_X(k) z^{k}|_{z=1}&
+&= \frac{d}{dz}\sum_{k=-\infty}^{\infty} P_X(k) z^{k}|_{z=1}&
 \\
-&=\sum_{k=0}^{n} k P_X(k) z^{k-1}|_{z=1}&
+&=\sum_{k=-\infty}^{\infty} k P_X(k) z^{k-1}|_{z=1}&
 \\
-&= \sum_{k=0}^{n} k P_X(k)&
+&= \sum_{k=-\infty}^{\infty} k P_X(k)&   \label{9}
 \\
-\therefore \text{Mean} &= \sum_{k=0}^{n=3} k {}^nC_kp^{k}q^{n-k}&
+&\text{From eq($\ref{3}$) and eq($\ref{9}$)}& \nonumber
+\\
+\text{Mean}&= \sum_{k=0}^{n=3} k {}^nC_kp^{k}q^{n-k}&
 \\
 = {}^3C_1&\left(\frac{1}{2}\right)\left(\frac{1}{2}\right)^{2}+2\times{}^3C_2\left(\frac{1}{2}\right)^{2}\left(\frac{1}{2}\right)& \nonumber \\ 
 & \quad+3\times{}^3C_3\left(\frac{1}{2}\right)^{3}&
@@ -98,3 +101,4 @@ https://github.com/nikhilnair90/FWC/tree/main/Module-II/Probability/Prob3/Code/p
 
 
 \end{document}
+
