@@ -42,25 +42,76 @@ Digital Communication Assignment
 
 
 \section{\textbf{Problem }}
-Generate samples of 
-\begin{equation}
-V = -2\ln\brak{1-U}  \nonumber
-\end{equation}
-and plot its CDF. 
+\begin{enumerate}
+\item Generate 
+	\begin{align}
+		T = U_1+U_2  \nonumber
+	\end{align}
+\item Find the CDF of $T$.
+\item Find the PDF of $T$.
+\item Find the theoretical expressions for the PDF and CDF of $T$.
+\item Verify your results through a plot. 
+\end{enumerate}
 
 \section{\textbf{Solution }}
-The following code generates samples and plots the CDF of $V$.
+Let $U1$ and $U2$ are independent uniform random variable between 0 and 1.
+\\ 
+CDF of $T$ is given as
+\begin{align}
+F_{T}(x) &= \pr{T \le x}&   \label{eq:1}
+\\
+&= \pr{U1+U2 \le x}&
+\\
+F_{T}(x)  &= 
+\begin{cases}
+0 & 0 < x 
+\\
+\frac{x^2}{2} & 0 \le x < 1
+\\
+\frac{-x^2}{2}+2x-1 & 1 < x \le 2 
+\\
+1 &  x > 2                \label{eq:3}
+\end{cases}
+\end{align}
+
+
+The following code generates samples and plots the CDF of $T$.
 
 \begin{lstlisting}
-https://github.com/nikhilnair90/FWC/tree/main/Module-II/Digital_Comm/6.3/6.3.1/Code/6_3_1.py
+https://github.com/nikhilnair90/FWC/tree/main/Module-II/Digital_Comm/6.4/Code/6_4_cdf.py
 \end{lstlisting}
 
-
-
-\section{\textbf{Figure }}
 \begin{figure}[h]
     \centering
-\includegraphics[width=\columnwidth]{figure/6_3_1.png}
+\includegraphics[width=\columnwidth]{figure/cdf.png}
+    \label{fig:my_label}
+\end{figure}
+
+ 
+PDF of $T$ is given as
+\begin{align}
+\pr{T=x}  &= 
+\begin{cases}
+0 & 0 < x 
+\\
+x & 0 \le x < 1
+\\
+2-x & 1 < x \le 2 
+\\
+1 &  x > 2                \label{eq:4}
+\end{cases}
+\end{align}
+\\
+\\
+The following code  plots the PDF of $T$.
+
+\begin{lstlisting}
+https://github.com/nikhilnair90/FWC/tree/main/Module-II/Digital_Comm/6.4/Code/6_4_pdf.py
+\end{lstlisting}
+
+\begin{figure}[h]
+    \centering
+\includegraphics[width=\columnwidth]{figure/pdf.png}
     \label{fig:my_label}
 \end{figure}
 
