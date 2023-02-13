@@ -11,10 +11,6 @@ T = U1 + U2
 T_ascend = np.sort(T)           # Sorting T in ascending order
 x = T_ascend
 
-# Calculating the CDF of T through simulation
-pdf_sim = np.ones(n)/n
-#cdf_sim = np.cumsum(pdf_sim)
-
 
 # Calculating theoretical PDF of T
 def pdf(x):
@@ -29,9 +25,15 @@ def pdf(x):
 
 y = [pdf(i) for i in x]
 
+# Calculating the CDF of T through simulations
+bin_edges = np.linspace(0, 2, num=50)
+bin_centers = (bin_edges[:-1] + bin_edges[1:]) / 2
+hist, _ = np.histogram(x, bins=bin_edges)
+bin_width = bin_edges[1] - bin_edges[0]
+hist = hist / (bin_width * np.sum(hist))
 
-#plt.plot(T_ascend, pdf_sim, label='Simulated PDF')
-plt.plot(x, y, label='PDF')
+plt.scatter(bin_centers, hist,color='red', label='Simulated PDF')
+plt.plot(x, y, label='Theoretical PDF')
 plt.grid() 
 plt.xlabel('$x$')
 plt.ylabel('$P(T=x)$')
