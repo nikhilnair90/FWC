@@ -13,7 +13,7 @@ A = 10**(A_dB/10)
 #print(A)
 
 
-Pe = 2 * Q(A)
+Pe =  Q(A)
 
 # Plot Pe
 plt.plot(A, Pe)
