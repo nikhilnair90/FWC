@@ -1,0 +1,132 @@
+$date
+	Sun Aug  6 15:07:55 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Sboxtest $end
+$var wire 32 ! s2_out [31:0] $end
+$var reg 1 " clk $end
+$var reg 32 # w [31:0] $end
+$scope module DUT2 $end
+$var wire 1 " clk $end
+$var wire 32 $ s2_out [31:0] $end
+$var wire 32 % w [31:0] $end
+$var wire 8 & mulx_out7 [7:0] $end
+$var wire 8 ' mulx_out6 [7:0] $end
+$var wire 8 ( mulx_out5 [7:0] $end
+$var wire 8 ) mulx_out4 [7:0] $end
+$var reg 32 * r0 [31:0] $end
+$var reg 32 + r1 [31:0] $end
+$var reg 32 , r2 [31:0] $end
+$var reg 32 - r3 [31:0] $end
+$var reg 8 . sqw0 [7:0] $end
+$var reg 8 / sqw1 [7:0] $end
+$var reg 8 0 sqw2 [7:0] $end
+$var reg 8 1 sqw3 [7:0] $end
+$scope module MULx_0 $end
+$var wire 8 2 V [7:0] $end
+$var wire 8 3 c [7:0] $end
+$var wire 1 " clk $end
+$var reg 8 4 mulx_out [7:0] $end
+$upscope $end
+$scope module MULx_1 $end
+$var wire 8 5 V [7:0] $end
+$var wire 8 6 c [7:0] $end
+$var wire 1 " clk $end
+$var reg 8 7 mulx_out [7:0] $end
+$upscope $end
+$scope module MULx_2 $end
+$var wire 8 8 V [7:0] $end
+$var wire 8 9 c [7:0] $end
+$var wire 1 " clk $end
+$var reg 8 : mulx_out [7:0] $end
+$upscope $end
+$scope module MULx_3 $end
+$var wire 8 ; V [7:0] $end
+$var wire 8 < c [7:0] $end
+$var wire 1 " clk $end
+$var reg 8 = mulx_out [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10010010 =
+b1101001 <
+b1001001 ;
+b1010001 :
+b1101001 9
+b10011100 8
+b0 7
+b1101001 6
+b0 5
+b1011011 4
+b1101001 3
+b10011001 2
+b1001001 1
+b10011100 0
+b0 /
+b10011001 .
+b11000110 -
+b10000001 ,
+b10111 +
+b11100 *
+b1011011 )
+b0 (
+b1010001 '
+b10010010 &
+b11100001100111111100111100010011 %
+b11100000101111000000111000110 $
+b11100001100111111100111100010011 #
+0"
+b11100000101111000000111000110 !
+$end
+#5
+1"
+#10
+b1101010001010111011001110110 !
+b1101010001010111011001110110 $
+b11000000 &
+b11000000 =
+b10011110 '
+b10011110 :
+b11101111 (
+b11101111 7
+b100001 )
+b100001 4
+b1110110 -
+b1110110 ,
+b1000101 +
+b1101 *
+b1100000 1
+b1100000 ;
+b1001111 0
+b1001111 8
+b11000011 /
+b11000011 5
+b10100100 .
+b10100100 2
+0"
+b1000010010110001010010110100 #
+b1000010010110001010010110100 %
+#15
+1"
+#20
+0"
+#25
+1"
+#30
+0"
+#35
+1"
+#40
+0"
+#45
+1"
+#50
+0"
